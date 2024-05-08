@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basic Calendar</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
-
 <body>
-  <h1>Hello World</h1>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <div class="calendar">
+    <div class="calendar-header">
+      <button id="prev-month-btn">&lt;</button>
+      <span id="current-month">May 2024</span>
+      <button id="next-month-btn">&gt;</button>
+    </div>
+    <div class="calendar-body">
+      <div class="days">Sun</div>
+      <div class="days">Mon</div>
+      <div class="days">Tue</div>
+      <div class="days">Wed</div>
+      <div class="days">Thu</div>
+      <div class="days">Fri</div>
+      <div class="days">Sat</div>
+      <!-- Days will be dynamically generated here -->
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
-
 </html>

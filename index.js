@@ -1,7 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import open from 'open';
 
+var log = console.log; 
 
 const app = express();
 const port = 3000;
@@ -32,4 +34,5 @@ app.get("/", async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
+  open(`http://localhost:${port}`);
 });
