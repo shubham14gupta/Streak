@@ -14,7 +14,7 @@ var x ;
 
     const streakLength = (endDate-startDate)/(1000*60*60*24) +1;
     if (streakLength >1){
-      $("h1").text("Streak : " + streakLength + " Days!!"); 
+      $("h2").text("Streak : " + streakLength + " Days!!"); 
     }
   
     let currentMonth = 4; // May (zero-based index)
