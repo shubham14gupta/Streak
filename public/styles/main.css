@@ -42,4 +42,11 @@ body {
   .today {
     background-color: #ffc107; /* Color for today's date */
   }
-  
+
+  .strikthrough{
+    text-decoration: line-through;
+}
+
+h1{
+  text-align: center;
+}
