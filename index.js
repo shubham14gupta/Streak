@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
   const checkStreakActivityQuery = "select * from activity"; 
   const checkStreakActivityResult = await db.query(checkStreakActivityQuery); 
   const activityList = checkStreakActivityResult.rows; 
-  log(activityList); 
+  log(selectedActivityName); 
     // Query to check if the streak for the selectedActivityId already exisits
     const checkStreakQuery = "SELECT start_date, end_date from streak where activity_id = $1";
     const checkStreakResult = await db.query(checkStreakQuery, [selectedActivityId]);

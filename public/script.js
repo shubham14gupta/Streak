@@ -1,7 +1,7 @@
 var log = console.log; 
 var x ; 
 
-document.addEventListener('DOMContentLoaded', function() {
+
     const prevMonthBtn = document.getElementById('prev-month-btn');
     const nextMonthBtn = document.getElementById('next-month-btn');
     const currentMonthDisplay = document.getElementById('current-month');
@@ -12,18 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
     startDate = new Date(startDate.value); 
     endDate = new Date(endDate.value); 
 
-    const streakLength = Math.ceil((endDate-startDate)/(1000*60*60*24) ) + 1;
+    const streakLength = (endDate-startDate)/(1000*60*60*24) +1;
     if (streakLength >1){
       $("h1").text("Streak : " + streakLength + " Days!!"); 
     }
-    
-
-    log(startDate); 
-    log(endDate); 
-    // const startDateDay = startDate.value.getDate(); 
-    // const endDateDay = endDate.value.getDate(); 
-    // const streakStartMonth = startDate.value.getMonth(); 
-    // const streakEndMonth = endDate.value.getMonth(); 
   
     let currentMonth = 4; // May (zero-based index)
     let currentYear = 2024;
@@ -66,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         calendarBody.appendChild(calendarDay);
       }
+      addBtnListner(); 
     }
   
     // Render initial calendar
@@ -93,12 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var dateBlock = $("div.days"); 
 
-$("div.days").on('click', function(){
-  const selectedDate = new Date(currentYear, currentMonth, this.textContent); 
-  $(this).toggleClass("strikthrough"); 
-  streakForm.elements['selectedDate'].value = selectedDate.toDateString(); 
-  streakForm.submit(); 
-})
+
 
 document.getElementById('activities').addEventListener('change', function() {
   var selectBox = document.getElementById('activities');
@@ -121,6 +109,13 @@ $("#new-activity-btn").on("click", function(){
 document.getElementById("activities").value = $("#activities").attr('value'); 
 
 x = $("#activities"); 
-  });
   
-
+function addBtnListner(){
+  $("div.days").on('click', function(){
+    log("hello");
+    const selectedDate = new Date(currentYear, currentMonth, this.textContent); 
+    $(this).toggleClass("strikthrough"); 
+    streakForm.elements['selectedDate'].value = selectedDate.toDateString(); 
+    streakForm.submit(); 
+  })
+}
